@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-list-pokemon',
-  template: `
-    <p>
-      list-pokemon works!
-    </p>
-  `,
+  templateUrl: './list-pokemon.component.html',
   styles: ``
 })
 export class ListPokemonComponent {
