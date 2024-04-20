@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { POKEMONS } from './mock-pokemons'; // on importe la variable 'POKEMONS' depuis Mock-Pokemon (c'est un tableau)
 import { Pokemon } from './pokemon'; // on importe le type (d'objet) 'pokemon' depuis 
 import { find } from 'rxjs';
@@ -8,15 +8,11 @@ import { find } from 'rxjs';
   templateUrl: 'app.component.html',
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent{
 
   pokemonList: Pokemon[] = POKEMONS; //on dit que la propriété 'pokemonList' et de type 'Pokemon' est égale a la variable importée 'POKEMONS'
                                      //et que elle ne peut être que de type 'Pokemon'
   pokemonSelected: Pokemon;
-  
-  ngOnInit() {
-    console.table(this.pokemonList);
-  }
 
   selectPokemon(pokemonID: string){                      // J'indique que l'objet passé a la méthode est de type 'Pokemon'
     const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonID)
