@@ -1,0 +1,12 @@
+<h1>Liste de Pokemon</h1>
+
+<input
+    #input
+    (keyup) = "selectPokemon(input.value)"
+    type="number"
+/>
+
+<p>{{ pokemonSelected?.name }}est selectionné !</p>
+
+<button>{{pokemonList[5].name}}</button> <!-- quand je click sur le bouton j'apppelle la methode "selectPokemon" et lui passe un objet pokemon de pokemonList -->
+<button>{{pokemonList[8].name}}</button>
