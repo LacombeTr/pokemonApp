@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   pokemonList: Pokemon[] = POKEMONS; //on dit que la propriété 'pokemonList' et de type 'Pokemon' est égale a la variable importée 'POKEMONS'
                                      //et que elle ne peut être que de type 'Pokemon'
   pokemonSelected: Pokemon;
-  
+
   ngOnInit() {
     console.table(this.pokemonList);
   }
