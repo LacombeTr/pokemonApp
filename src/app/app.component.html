@@ -1,12 +1,33 @@
-<h1>Liste de Pokemon</h1>
+<h1 class="center">Liste de Pokemon</h1>
 
 <input
     #input
-    (keyup) = "selectPokemon(input.value)"
+    (keyup.enter) = "selectPokemon(input.value)"
     type="number"
 />
 
-<p>{{ pokemonSelected?.name }}est selectionné !</p>
+<p *ngIf="pokemonSelected">
+    {{ pokemonSelected?.name }} est selectionné !
+</p>
 
-<button>{{pokemonList[5].name}}</button> <!-- quand je click sur le bouton j'apppelle la methode "selectPokemon" et lui passe un objet pokemon de pokemonList -->
-<button>{{pokemonList[8].name}}</button>
+<p *ngIf="!pokemonSelected">
+    Aucun pokemon ne correspond à la recherche !
+</p>
+
+<div class="row">
+    <div class="col s6 m6 l4" *ngFor="let pokemon of pokemonList">
+        <div class = "card horizontal grey lighten-4">
+            <div class="card-image">
+                <img [src]="pokemon.picture" style="object-fit: cover; height: 100%; width: 500px;" class="center-align">
+            </div>
+
+            <div class="card-content">
+                <span class="card-title black-text ">{{ pokemon.name }}</span>
+                <p>Type(s): {{pokemon.types}}</p>
+                <p>PV: {{pokemon.hp}}</p>
+                <p>Niv.: {{pokemon.cp}}</p>
+                <p>Eclos le: {{pokemon.created}}</p>
+            </div>
+        </div>
+    </div>
+</div>
