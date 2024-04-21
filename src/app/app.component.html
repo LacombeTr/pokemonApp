@@ -1,17 +1,11 @@
-<h1 class="center">Liste de Pokemon</h1>
+<nav>
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="brand-logo">Pokemon App</a>
+    </div>
+</nav>
 
-<input
-    #input
-    (keyup.enter) = "selectPokemon(input.value)"
-    type="number"
-/>
-
-<p *ngIf="pokemonSelected">
-    {{ pokemonSelected.name }} est selectionné !
-</p>
-
-<p *ngIf="!pokemonSelected">
-    Aucun pokemon ne correspond à la recherche !
-</p>
-
-<router-outlet></router-outlet>
+<router-outlet class="center-align"></router-outlet>

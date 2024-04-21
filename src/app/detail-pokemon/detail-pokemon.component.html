@@ -1,1 +1,19 @@
-<p>detail-pokemon works!</p>
+<div class="row" *ngIf="pokemon">
+    <div class="card col s3">
+        <div class="card-image center">
+            <img [src]="pokemon.picture" style="object-fit: cover; height: 70%; width: 100%;" class="center-align">
+        </div>
+
+        <div class="card-content center">
+            <span class="card-title black-text">{{ pokemon.name }}</span>
+            <p>Type(s): <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor}}"> {{ type }} </span></p>
+            <p>Eclos le: {{pokemon.created | date: "dd/MM/yyyy"}}</p>
+        </div>
+
+        <div class="card-action center">
+            <a (click)="goToPokemonList()">Retour</a> <!-- La methode 'goToPokemonList'se déclenche au clic et permet de revenir sur la page initiale -->
+        </div>
+    </div>
+</div>
+
+<p class="center" *ngIf="!pokemon">Aucun pokemon ne correspond !</p>
