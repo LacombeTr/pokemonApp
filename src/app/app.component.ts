@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { POKEMONS } from './mock-pokemons'; // on importe la variable 'POKEMONS' depuis Mock-Pokemon (c'est un tableau)
-import { Pokemon } from './pokemon'; // on importe le type (d'objet) 'pokemon' depuis 
+import { POKEMONS } from './pokemon/mock-pokemons'; // on importe la variable 'POKEMONS' depuis Mock-Pokemon (c'est un tableau)
+import { Pokemon } from './pokemon/pokemon'; // on importe le type (d'objet) 'pokemon' depuis 
 import { find } from 'rxjs';
 
 @Component({
