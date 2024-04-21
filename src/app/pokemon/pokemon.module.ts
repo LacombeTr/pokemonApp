@@ -7,6 +7,7 @@ import { Pokemon } from './pokemon';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { BorderCardDirective } from './border-card.directive';
+import { PokemonService } from './pokemon.service';
 
 const pokemonRoutes: Routes = [ //declarer les routes les plus specifique en premier car c'est lu du haut vers le bas
   { path: 'pokemon', component: ListPokemonComponent}, //liste pokemon
@@ -23,6 +24,7 @@ const pokemonRoutes: Routes = [ //declarer les routes les plus specifique en pre
   imports: [
     CommonModule, // module qui conteint des logiaues telles que ngIf et ngFor
     RouterModule.forChild(pokemonRoutes)
-  ]
+  ],
+  providers: [PokemonService] // Indique les services qui fournissent ce module
 })
-export class PokemonModule { }
+export class PokemonModule {}
