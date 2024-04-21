@@ -5,17 +5,14 @@ import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-detail-pokemon',
-  templateUrl: './detail-pokemon.component.html',
-  styles: ``
+  templateUrl: './detail-pokemon.component.html'
 })
 export class DetailPokemonComponent {
 
   pokemonList: Pokemon[];
   pokemon: Pokemon|undefined;
 
-  constructor(private  route: ActivatedRoute){
-
-  }
+  constructor(private  route: ActivatedRoute, private router: Router){ }
 
   ngOnInit() {
     this.pokemonList = POKEMONS;
@@ -24,5 +21,9 @@ export class DetailPokemonComponent {
     if(pokemonID){
       this.pokemon = this.pokemonList.find(pokemon => pokemon.id == +pokemonID);
     }
+  }
+
+  goToPokemonList(){ // méthode qui permet a l'utilisateur d'etre redirigé depuis le composant vers l'accueil
+    this.router.navigate(['/pokemon'])
   }
 }
