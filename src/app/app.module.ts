@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,6 +14,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     PokemonModule,
     AppRoutingModule //bien mettre ce module en dernier car lors de la lecture des routes il doit étre lu apres les autres routes
   ],

@@ -5,6 +5,7 @@ import { POKEMONS } from './mock-pokemons';
 @Injectable(// Decorateur injectable qui indique que notre service peut étre injecter 
   // {providedIn: 'root'} // 'root' indique que on veut utiliser la meme instance du service a travers toute l'app
 )
+
 export class PokemonService {
 
   getPokemonList(): Pokemon[] {
