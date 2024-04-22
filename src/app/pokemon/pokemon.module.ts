@@ -10,8 +10,10 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonService } from './pokemon.service';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 
 const pokemonRoutes: Routes = [ //declarer les routes les plus specifique en premier car c'est lu du haut vers le bas
+  { path: 'editPokemon/pokemon/:id', component: EditPokemonComponent}, //detail des pokemons
   { path: 'pokemon', component: ListPokemonComponent}, //liste pokemon
   { path: 'pokemon/:id', component: DetailPokemonComponent}, //detail des pokemons
 ];
@@ -22,7 +24,8 @@ const pokemonRoutes: Routes = [ //declarer les routes les plus specifique en pre
     DetailPokemonComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
-    PokemonFormComponent, //on l'utilise aue ici dans le cadre des pokemons
+    PokemonFormComponent,
+    EditPokemonComponent, //on l'utilise aue ici dans le cadre des pokemons
   ],
   imports: [
     CommonModule, // module qui conteint des logiaues telles que ngIf et ngFor

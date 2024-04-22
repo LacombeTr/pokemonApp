@@ -41,4 +41,17 @@ export class PokemonFormComponent implements OnInit{
     console.log('Submitted')
     this.router.navigate(['/pokemon', this.pokemon.id])
   }
+
+  isTypesValid(type: string): boolean{
+    if(this.pokemon.types.length == 1 && this.hasType(type)){ // Si mon pokemon n'a qu'un type et qu'il sagit du type courant alors je fige cette checkbox
+      return false
+    }
+
+    if(this.pokemon.types.length > 1 && !this.hasType(type)){// si mon pokemon a 2 types je bloque toutes les checkboxes sautf celles qui correspondent aux types du pokemon
+      return false
+    }
+
+    return true
+
+  }
 }

@@ -30,4 +30,8 @@ export class DetailPokemonComponent {
   goToPokemonList(){ // méthode qui permet a l'utilisateur d'etre redirigé depuis le composant vers l'accueil
     this.router.navigate(['/pokemon'])
   }
+
+  goToPokemonForm(pokemon: Pokemon) {
+    this.router.navigate(['editPokemon/pokemon',pokemon.id]);
+    }
 }
